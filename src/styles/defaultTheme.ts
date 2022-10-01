@@ -7,14 +7,13 @@ export const defaultTheme = extendTheme({
     grey: "#20292E",
     white: "#FFFFFF",
   },
-  
   styles: {
     global: {
       '*': {
         margin: 0,
         padding: 0,
         boxSizing: 'border-box',
-        lineHeight: 1
+        lineHeight: 1,
       },
       body: {
         fontFamily: 'Poppins'
