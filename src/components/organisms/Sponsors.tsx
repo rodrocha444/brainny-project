@@ -10,10 +10,10 @@ export function Sponsors() {
   return (
     <Flex
       align='center'
-      justify='space-between'
-      my={pxToRem(46)}
+      justify='space-around'
+      my={pxToRem(90)}
     >
-      {sponsorsLogos.map((logoSrc => <Image src={logoSrc} alt='fas' h={pxToRem(68)}/>))}
+      {sponsorsLogos.map((logoSrc => <Image src={logoSrc} alt='Empresas Envolvidas' h={pxToRem(60)}/>))}
     </Flex>
   )
 }

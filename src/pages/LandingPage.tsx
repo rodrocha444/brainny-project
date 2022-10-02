@@ -1,14 +1,18 @@
 import { Box, Container } from "@chakra-ui/react";
-import { Footer } from "../components/organisms/Footer";
 
+import { defaultTheme } from "../styles/defaultTheme";
 import { Header } from "../components/organisms/Header";
 import { MainBanner } from "../components/organisms/MainBanner";
-import { Plans } from "../components/organisms/Plans";
 import { Sponsors } from "../components/organisms/Sponsors";
+import { Plans } from "../components/organisms/Plans";
+import { Footer } from "../components/organisms/Footer";
 
-export function Home() {
+export function LandingPage() {
   return (
-    <Box bg='principalColor' overflowX='hidden'>
+    <Box
+      bg={defaultTheme.colors.principalColor}
+      overflowX='hidden'
+    >
       <Container maxW='1000px' bgClip='border-box'>
         <Header />
         <MainBanner />

@@ -4,6 +4,7 @@ import { pxToRem } from "../utils/operations";
 const configTheme = {
   colors: {
     principalColor: "#330693",
+    midColor: "#4616ab",
     secundaryColor: "#8A53FF",
     grey: "#20292E",
     white: "#FFFFFF",

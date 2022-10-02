@@ -1,22 +1,21 @@
 import { Flex, Text } from "@chakra-ui/react";
-import { defaultTheme } from "../../styles/defaultTheme";
 import { pxToRem } from "../../utils/operations";
 import { H1 } from "../atoms/Headings";
+import { TextDefault } from "../atoms/Texts";
 import { Carousel } from "../molecules/Carousel";
 
 export function Plans() {
   return (
-    <Flex direction='column' align='center'>
+    <Flex direction='column' textAlign='center' align='center' gap={pxToRem(20)}>
       <H1>Encontre o plano perfeito</H1>
-      <Text
+      <TextDefault
+        strong={false}
         maxW={pxToRem(640)}
-        color={defaultTheme.colors.white}
-        mt='10px'
       >
         Escolha o plano que melhor se encaixa na sua empresa e  faça sua assinatura, dentro de 72h iremos liberar seus acessos.
-      </Text>
+      </TextDefault>
 
-      <Carousel my={pxToRem(80)} />
+      <Carousel my={pxToRem(90)} />
     </Flex>
   )
 }

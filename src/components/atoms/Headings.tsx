@@ -13,3 +13,17 @@ export function H1(props: HeadingProps) {
     />
   )
 }
+
+export function HSpaced(props: HeadingProps) {
+  return (
+    <Heading
+      fontSize={pxToRem(24)}
+      fontWeight={300}
+      letterSpacing='0.165em'
+      lineHeight={pxToRem(36)}
+      textTransform='uppercase'
+      color='white'
+      {...props}
+    />
+  )
+}
