@@ -1,6 +1,7 @@
 import { extendTheme } from "@chakra-ui/react";
+import { pxToRem } from "../utils/operations";
 
-export const defaultTheme = extendTheme({
+const configTheme = {
   colors: {
     principalColor: "#330693",
     secundaryColor: "#8A53FF",
@@ -13,11 +14,13 @@ export const defaultTheme = extendTheme({
         margin: 0,
         padding: 0,
         boxSizing: 'border-box',
-        lineHeight: 1,
+        lineHeight: pxToRem(24),
       },
       body: {
         fontFamily: 'Poppins'
       }
     }
   }
-})
+}
+export const defaultTheme = extendTheme(configTheme) as typeof configTheme
+export type ColorsThemeType = keyof typeof configTheme.colors
