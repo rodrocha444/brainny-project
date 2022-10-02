@@ -8,7 +8,7 @@ import { Sponsors } from "../components/organisms/Sponsors";
 
 export function Home() {
   return (
-    <Box bg='principalColor' >
+    <Box bg='principalColor' overflowX='hidden'>
       <Container maxW='1000px' bgClip='border-box'>
         <Header />
         <MainBanner />
