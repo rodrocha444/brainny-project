@@ -6,14 +6,16 @@ import { MainBanner } from "../components/organisms/MainBanner";
 import { Sponsors } from "../components/organisms/Sponsors";
 import { Plans } from "../components/organisms/Plans";
 import { Footer } from "../components/organisms/Footer";
+import BgLandingPage from '../assets/bg-landing-page.png'
 
 export function LandingPage() {
   return (
     <Box
-      bg={defaultTheme.colors.principalColor}
+      bgImage={BgLandingPage}
+      
       overflowX='hidden'
     >
-      <Container maxW='1000px' bgClip='border-box'>
+      <Container maxW='1000px' bgClip='border-box' backdropFilter='blur(1px)'>
         <Header />
         <MainBanner />
         <Sponsors />
