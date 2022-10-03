@@ -1,4 +1,4 @@
-import { Box, Flex, Heading, Text } from "@chakra-ui/react";
+import { Box, Flex, Text } from "@chakra-ui/react";
 import { defaultTheme } from "../../styles/defaultTheme";
 import { pxToRem } from "../../utils/operations";
 import { ButtonWithBG, ButtonWithoutBG } from "../atoms/Buttons";
@@ -20,7 +20,7 @@ export function Description() {
           >Controle de Pontos</Text>
         </H1>
       </Box>
-      
+
       <TextDefault strong={true}>
         Com o PontoGo seus colaboradores poderão bater seus pontos de forma fácil e rápida, possuindo também uma Dashboard intuitiva.
       </TextDefault>

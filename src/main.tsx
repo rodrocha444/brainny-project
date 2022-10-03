@@ -3,15 +3,15 @@ import ReactDOM from 'react-dom/client'
 import { ChakraProvider } from '@chakra-ui/react'
 import { ApolloProvider } from '@apollo/client/react'
 
-import { App } from './App'
 import { defaultTheme } from './styles/defaultTheme'
 import { client } from './api'
+import { Router } from './Router'
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <ChakraProvider theme={defaultTheme}>
       <ApolloProvider client={client}>
-        <App />
+        <Router />
       </ApolloProvider>
     </ChakraProvider>
   </React.StrictMode>

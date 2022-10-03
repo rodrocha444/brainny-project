@@ -49,6 +49,7 @@ export function PlanCard(props: PlanCardProps) {
       </Box>
 
       <ListCheck />
+      
       {props.selected && <ButtonWithBG
         bgColor={["secundaryColor", "principalColor"]}
         color={["white", "white"]}

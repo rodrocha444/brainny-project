@@ -1,6 +1,5 @@
 import { Box, Container } from "@chakra-ui/react";
 
-import { defaultTheme } from "../styles/defaultTheme";
 import { Header } from "../components/organisms/Header";
 import { MainBanner } from "../components/organisms/MainBanner";
 import { Sponsors } from "../components/organisms/Sponsors";
@@ -12,10 +11,9 @@ export function LandingPage() {
   return (
     <Box
       bgImage={BgLandingPage}
-      
       overflowX='hidden'
     >
-      <Container maxW='1000px' bgClip='border-box' backdropFilter='blur(1px)'>
+      <Container maxW='1000px' backdropFilter='blur(0.5px)'>
         <Header />
         <MainBanner />
         <Sponsors />
