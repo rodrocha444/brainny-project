@@ -7,11 +7,13 @@ import { defaultTheme } from "../styles/defaultTheme";
 import { pxToRem } from "../utils/operations";
 import { PasswordInput } from "../components/atoms/PasswordInput";
 import { ButtonWithBG } from "../components/atoms/Buttons";
+import { useNavigate } from "react-router-dom";
 
 export function Login() {
+  const navigate = useNavigate();
   return (
     <Container maxW='1000px' centerContent h='100vh'>
-      <Flex align='center' gap={pxToRem(150)} h='100%'>
+      <Flex align='center' gap={pxToRem(150)} h='100%' direction={['column','row']}>
         <Flex align='center' direction='column' >
           <Image src={MainLoginImage} alt='Login' w={pxToRem(400)} />
 
@@ -58,6 +60,7 @@ export function Login() {
             <ButtonWithBG
               bgColor={['principalColor', 'midColor']}
               color={['white', "secundaryColor"]}
+              onClick={() => navigate('/dashboard')}
             >
               Entrar
             </ButtonWithBG>
