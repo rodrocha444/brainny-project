@@ -12,6 +12,9 @@ export function Dashboard() {
         boxShadow='0px 4px 10px rgba(0, 0, 0, 0.1)'
         direction='column'
         justifyContent='space-between'
+        sx={{
+          zIndex:1
+        }}
       >
         <Box>
           <Image src={LogoColor} alt='Logotipo do PontoGo' p={pxToRem(30)} />
