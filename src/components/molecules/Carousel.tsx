@@ -54,7 +54,7 @@ const cards: CardType[] = [
 ]
 
 export function Carousel(props: FlexProps) {
-  const [selectedCard, setSelectedCard] = useState(1)
+  const [selectedCard, setSelectedCard] = useState(2)
 
   function updateSelectedCard(action: 'INCREMENT' | 'DECREMENT') {
     if (action === 'INCREMENT' && selectedCard < cards.length) {
