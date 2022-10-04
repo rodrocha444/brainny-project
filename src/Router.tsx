@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import { Dashboard } from './pages/DashBoard'
+import { System } from './pages/System'
 import { LandingPage } from './pages/LandingPage'
 import { Login } from './pages/Login'
 
@@ -9,8 +9,9 @@ export function Router() {
       <Routes>
         <Route path='/' element={<LandingPage />} />
         <Route path='/login' element={<Login />} />
-        <Route path='/dashboard' element={<Dashboard />} />
+        <Route path='/dashboard' element={<System userType='admin' />} />
+        <Route path='/meus-registros' element={<System userType='colaborador' />} />
       </Routes>
-    </BrowserRouter>
+    </BrowserRouter >
   )
 }
