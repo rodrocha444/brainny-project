@@ -5,17 +5,25 @@ import { defaultTheme } from "../../styles/defaultTheme";
 import { ListCheck } from "../atoms/ListCheck";
 
 const notSelectedStyle = {
-  opacity: 0.2,
+  opacity: 0.15,
   filter: 'blur(1px)',
   userSelect: 'none'
 }
 
 const selectedStyle = {
-  transform: 'scale(1.2)'
+  transform: 'scale(1.1)'
 }
-
+export interface CardType {
+  id: number
+  title: string
+  price: number
+  quantColaboradores: number
+  features: string[]
+  notFeatures: string[]
+}
 interface PlanCardProps extends FlexProps {
   selected: boolean
+  data: CardType
 }
 export function PlanCard(props: PlanCardProps) {
   return (
@@ -30,26 +38,27 @@ export function PlanCard(props: PlanCardProps) {
       color={defaultTheme.colors.white}
       gap={pxToRem(10)}
       fontSize={14}
+      transition='all 0.4s'
       {...props}
     >
 
-      <Text fontSize={pxToRem(20)}>Plano Prata</Text>
+      <Text fontSize={pxToRem(20)}>{props.data.title}</Text>
 
       <Box textAlign='center'>
         <Text
           fontWeight={800}
           fontSize={pxToRem(50)}
           lineHeight={1}
-        >R$ 50</Text>
+        >R$ {props.data.price}</Text>
         <Text
           fontWeight={300}
           lineHeight={pxToRem(24)}
           color='#8A53FF'
-        >Uso de 10 colaboradores</Text>
+        >Uso de {props.data.quantColaboradores} colaboradores</Text>
       </Box>
 
-      <ListCheck />
-      
+      <ListCheck listChecked={props.data.features} listNotChecked={props.data.notFeatures} />
+
       {props.selected && <ButtonWithBG
         bgColor={["secundaryColor", "principalColor"]}
         color={["white", "white"]}

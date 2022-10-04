@@ -1,4 +1,4 @@
-import { Box, Container } from "@chakra-ui/react";
+import { Box, Container, Link } from "@chakra-ui/react";
 
 import { Header } from "../components/organisms/Header";
 import { MainBanner } from "../components/organisms/MainBanner";
@@ -17,7 +17,7 @@ export function LandingPage() {
         <Header />
         <MainBanner />
         <Sponsors />
-        <Plans />
+        <Plans id='plans' />
         <Footer />
       </Container >
     </Box >

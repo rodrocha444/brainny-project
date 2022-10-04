@@ -13,7 +13,7 @@ export function Sponsors() {
       justify='space-around'
       my={pxToRem(90)}
     >
-      {sponsorsLogos.map((logoSrc => <Image src={logoSrc} alt='Empresas Envolvidas' h={pxToRem(60)}/>))}
+      {sponsorsLogos.map((logoSrc => <Image key={logoSrc} src={logoSrc} alt='Empresas Envolvidas' h={pxToRem(60)} />))}
     </Flex>
   )
 }

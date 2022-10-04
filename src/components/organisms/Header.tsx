@@ -19,7 +19,9 @@ export function Header() {
 
       <Flex gap='1rem'>
         <ButtonWithoutBG>Início</ButtonWithoutBG>
-        <ButtonWithoutBG>Planos</ButtonWithoutBG>
+        <ButtonWithoutBG
+          onClick={() => location.href = '#plans'}
+        >Planos</ButtonWithoutBG>
         <ButtonWithBG
           bgColor={["white", "secundaryColor"]}
           color={["principalColor", "white"]}

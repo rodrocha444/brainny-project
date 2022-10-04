@@ -21,7 +21,7 @@ export function Description() {
         </H1>
       </Box>
 
-      <TextDefault strong={true}>
+      <TextDefault>
         Com o PontoGo seus colaboradores poderão bater seus pontos de forma fácil e rápida, possuindo também uma Dashboard intuitiva.
       </TextDefault>
 
@@ -34,6 +34,7 @@ export function Description() {
         <ButtonWithoutBG
           variant={"outline"}
           width={pxToRem(160)}
+          onClick={() => location.href = '#plans'}
         >Ver planos</ButtonWithoutBG>
       </Flex>
 
