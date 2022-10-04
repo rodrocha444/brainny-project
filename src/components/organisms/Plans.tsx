@@ -15,7 +15,7 @@ export function Plans(props: FlexProps) {
         Escolha o plano que melhor se encaixa na sua empresa e  faça sua assinatura, dentro de 72h iremos liberar seus acessos.
       </TextDefault>
 
-      <Carousel my={pxToRem(90)} />
+      <Carousel mt={pxToRem(30)} mb={pxToRem(90)} />
     </Flex>
   )
 }

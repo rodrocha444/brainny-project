@@ -17,7 +17,7 @@ const data = [
   },
   {
     id: 3,
-    colaborador: 'Miriam Raquel',
+    colaborador: 'Miriam',
     data: '13/10/18',
     hora: '12:00h'
   },
