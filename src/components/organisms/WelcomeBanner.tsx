@@ -18,7 +18,6 @@ export function WelcomeBanner() {
 
       <TextDefault
         textAlign='center'
-        strong={false}
         color={defaultTheme.colors.principalColor}
         maxW={pxToRem(340)}
         fontSize={pxToRem(22)}

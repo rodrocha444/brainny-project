@@ -4,6 +4,7 @@ import { defaultTheme } from "../../styles/defaultTheme";
 import { pxToRem } from "../../utils/operations";
 import LogoColor from '../../assets/logo-color.svg';
 import { ReactNode } from "react";
+import { useApolloClient } from "@apollo/client";
 
 export type Option = {
   description: string
@@ -14,6 +15,7 @@ interface SidebarProps {
   options: Option[]
 }
 export function Sidebar(props: SidebarProps) {
+  const client = useApolloClient()
   return (
     <Flex
       w='15%'
@@ -46,7 +48,9 @@ export function Sidebar(props: SidebarProps) {
           </HStack>)
         }
       </Box>
-      <Button leftIcon={<WarningIcon />} textAlign='left'>
+      <Button leftIcon={<WarningIcon />} textAlign='left'
+        onClick={() => client.resetStore()}
+      >
         Sair
       </Button>
     </Flex>

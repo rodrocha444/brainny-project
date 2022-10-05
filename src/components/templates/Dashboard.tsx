@@ -32,7 +32,10 @@ export function Dashboard(props: DashboardProps) {
         {props.userType === 'colaborador' &&
           <RegisterButton />
         }
-        <Table />
+        <Table 
+          // ths={}
+          // data={}
+        />
       </Box>
     </Flex >
   )

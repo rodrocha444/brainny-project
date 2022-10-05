@@ -4,7 +4,7 @@ import { ChakraProvider } from '@chakra-ui/react'
 import { ApolloProvider } from '@apollo/client/react'
 
 import { defaultTheme } from './styles/defaultTheme'
-import { client } from './api'
+import { client } from './api/config'
 import { Router } from './Router'
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
