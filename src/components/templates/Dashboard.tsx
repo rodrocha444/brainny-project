@@ -6,6 +6,8 @@ import { Table } from "../molecules/Table";
 import { RegisterButton } from "../molecules/RegisterButton";
 import { CalendarIcon, EditIcon } from "@chakra-ui/icons";
 import { Pagination } from "../molecules/Pagination";
+import { useQuery } from "@apollo/client";
+import { GET_USERS_EMAIL } from "../../api/querys";
 
 const optionsColaborador: Option[] = [
   {

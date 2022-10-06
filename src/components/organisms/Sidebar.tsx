@@ -4,7 +4,8 @@ import { defaultTheme } from "../../styles/defaultTheme";
 import { pxToRem } from "../../utils/operations";
 import LogoColor from '../../assets/logo-color.svg';
 import { ReactNode } from "react";
-import { useApolloClient } from "@apollo/client";
+import { gql, useApolloClient, useQuery } from "@apollo/client";
+import { Navigate, useNavigate } from "react-router-dom";
 
 export type Option = {
   description: string
@@ -16,13 +17,14 @@ interface SidebarProps {
 }
 export function Sidebar(props: SidebarProps) {
   const client = useApolloClient()
+  const navigate = useNavigate()
   return (
     <Flex
       maxW={pxToRem(200)}
       boxShadow='0px 4px 10px rgba(0, 0, 0, 0.1)'
       direction='column'
       justifyContent='space-between'
-      
+
     >
       <Box >
         <Image src={LogoColor} alt='Logotipo do PontoGo' p={pxToRem(30)} />
@@ -47,7 +49,11 @@ export function Sidebar(props: SidebarProps) {
         }
       </Box>
       <Button leftIcon={<WarningIcon />} textAlign='left'
-        onClick={() => client.resetStore()}
+        onClick={() => {
+          client.resetStore()
+          localStorage.removeItem('token')
+          navigate('/')
+        }}
       >
         Sair
       </Button>
