@@ -1,28 +1,52 @@
 import jwtDecode from "jwt-decode";
+import { UsersPermissionsLoginInput, UsersPermissionsLoginPayload, RegisteredTime } from "../gql/graphql";
 import { client } from "./config";
 import { LOGIN_MUTATION } from "./mutations";
+import { GET_REGISTERED_TIMES, GET_REGISTERED_TIMES_ALL } from "./querys";
 
 export async function login(email: string, password: string) {
-  const result = await client.mutate({
+  const result = await client.mutate<{ login: UsersPermissionsLoginPayload }, UsersPermissionsLoginInput>({
     mutation: LOGIN_MUTATION,
-    variables: { email: email, password: password }
+    variables: {
+      identifier: email,
+      password
+    }
   })
 
-  if (result.errors) return result.errors
-  return result.data
-}
+  localStorage.setItem('token', result.data?.login.jwt || '')
 
-export function verifyAuthentication() {
-  try {
-    const token = localStorage.getItem('token') || ''
-    const decodedToken: any = jwtDecode(token)
-    if (decodedToken.id) return true
-  }
-  catch (err) {
-    return false
-  }
+  return result.data?.login.user.role?.type!
 }
 
 export function logout() {
   localStorage.removeItem('token')
+  client.resetStore()
+}
+
+export function authenticate() {
+  try {
+    jwtDecode(localStorage.getItem('token')!)
+    return true
+  } catch (err) {
+    console.log(err)
+
+    return false
+  }
+}
+
+
+export async function getRegisteredTimes(id?: number) {
+  if (id) {
+    return await client.query({
+      query: GET_REGISTERED_TIMES,
+      variables: {
+        id: id.toString()
+      }
+    }).then(result=> result.data.registeredTimes)
+  }
+  else {
+    return await client.query({
+      query: GET_REGISTERED_TIMES_ALL,
+    }).then(result=> result.data.registeredTimes)
+  }
 }

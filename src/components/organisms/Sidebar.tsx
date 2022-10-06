@@ -6,6 +6,7 @@ import LogoColor from '../../assets/logo-color.svg';
 import { ReactNode } from "react";
 import { gql, useApolloClient, useQuery } from "@apollo/client";
 import { Navigate, useNavigate } from "react-router-dom";
+import { logout } from "../../api/operations";
 
 export type Option = {
   description: string
@@ -50,8 +51,7 @@ export function Sidebar(props: SidebarProps) {
       </Box>
       <Button leftIcon={<WarningIcon />} textAlign='left'
         onClick={() => {
-          client.resetStore()
-          localStorage.removeItem('token')
+          logout()
           navigate('/')
         }}
       >

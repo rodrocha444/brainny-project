@@ -2,22 +2,18 @@ import { Box, HStack, Table as TableChakra, Tbody, Td, Text, Th, Thead, Tr } fro
 import { defaultTheme } from '../../styles/defaultTheme'
 import { pxToRem } from '../../utils/operations'
 
-type Registers = {
-  id: number
+export type TableData = {
+  id: string
   colaborador: string
   data: string
   hora: string
 }
-const data = [
-  
-]
-interface TableProps {
-  ths: string[]
-  data: Registers[]
-}
-export function Table({ ths, data }: TableProps) {
-  ths = ['colaborador', 'data', 'hora']
 
+interface TableProps {
+  data: any
+}
+export function Table({ data }: TableProps) {
+  const ths = ['colaborador', 'data', 'hora']
   return (
     <TableChakra
       sx={{
@@ -37,7 +33,7 @@ export function Table({ ths, data }: TableProps) {
         </Tr>
       </Thead>
       <Tbody>
-        {data.map(value => (
+        {data.map((value: any) => (
           <Tr bg='white'>
             <Td borderLeftRadius='10px'>
               <HStack align='stretch'>
@@ -47,19 +43,19 @@ export function Table({ ths, data }: TableProps) {
                     fontSize={pxToRem(18)}
                     fontWeight={700}
                     letterSpacing='0.02rem'
-                  >{value.colaborador}</Text>
+                  >{value.user.name}</Text>
                   <Text
                     letterSpacing='0.02rem'
                     opacity='0.6'
                   >{new Intl.NumberFormat('pt-br', {
                     minimumIntegerDigits: 3,
                     useGrouping: false
-                  }).format(value.id)}</Text>
+                  }).format(Number(value.id))}</Text>
                 </Box>
               </HStack>
             </Td>
-            <Td opacity={0.7}>{value.data}</Td>
-            <Td borderRightRadius='10px' opacity={0.7}>{value.hora}</Td>
+            <Td opacity={0.7}>{new Intl.DateTimeFormat('pt-br').format(new Date(value.created_at))}</Td>
+            <Td borderRightRadius='10px' opacity={0.7}>{new Intl.DateTimeFormat('pt-br', { timeStyle: 'short' }).format(new Date(value.created_at))}</Td>
           </Tr>
         ))}
       </Tbody>

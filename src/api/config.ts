@@ -16,8 +16,6 @@ const link = from([
   new HttpLink({ uri: "http://test.frontend.api.brainny.cc/graphql" }),
 ])
 
-
-
 export const client = new ApolloClient({
   link,
   cache: new InMemoryCache(),

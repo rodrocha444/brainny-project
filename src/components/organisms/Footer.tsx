@@ -27,8 +27,8 @@ export function Footer() {
           <Text fontWeight={300}>Se conecta com a gente</Text>
         </Flex>
         {socialLogos.map((logo, index) => (
-          <Link href={logo.href} target="_blank" transition='all 0.2s' _hover={{ filter: 'opacity(0.8)' }}>
-            <Image key={index} src={logo.src} alt='' boxSize={pxToRem(60)} />
+          <Link key={index} href={logo.href} target="_blank" transition='all 0.2s' _hover={{ filter: 'opacity(0.8)' }}>
+            <Image src={logo.src} alt='' boxSize={pxToRem(60)} />
           </Link>
         ))}
       </Flex>
