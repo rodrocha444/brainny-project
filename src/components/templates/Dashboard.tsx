@@ -5,6 +5,7 @@ import { Option, Sidebar } from "../organisms/Sidebar";
 import { Table } from "../molecules/Table";
 import { RegisterButton } from "../molecules/RegisterButton";
 import { CalendarIcon, EditIcon } from "@chakra-ui/icons";
+import { Pagination } from "../molecules/Pagination";
 
 const optionsColaborador: Option[] = [
   {
@@ -32,10 +33,30 @@ export function Dashboard(props: DashboardProps) {
         {props.userType === 'colaborador' &&
           <RegisterButton />
         }
-        <Table 
-          // ths={}
-          // data={}
+        <Table
+          ths={['colaborador', 'data', 'hora']}
+          data={[
+            {
+              id: 1,
+              colaborador: 'Joao Silva',
+              data: '11/10/19',
+              hora: '12:00h'
+            },
+            {
+              id: 2,
+              colaborador: 'Rodrigo Rocha',
+              data: '01/10/22',
+              hora: '06:00h'
+            },
+            {
+              id: 3,
+              colaborador: 'Miriam',
+              data: '13/10/18',
+              hora: '12:10h'
+            },
+          ]}
         />
+        <Pagination />
       </Box>
     </Flex >
   )

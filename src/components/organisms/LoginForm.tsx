@@ -24,32 +24,32 @@ export function LoginForm() {
   const [authLogin, { loading }] = useMutation<any, LOGIN_MUTATION_VARIABLES>(LOGIN_MUTATION)
 
   function handleSubmit() {
-    // authLogin({
-    //   variables: {
-    //     identifier: email,
-    //     password: pass,
-    //   },
-    //   onError: (error) => {
-    //     console.error(error.message)
-    //     setIsModalVisible(true)
-    //     setTimeout(() => { return setIsModalVisible(false) }, 3000)
-    //     setEmail('')
-    //     setPass('')
-    //   },
-    //   onCompleted: (data) => {
-    //     if (data.login.user.role.type === 'admin') navigate('/dashboard')
-    //     if (data.login.user.role.type === 'user') navigate('/meus-registros')
-    //   },
-    // })
-    if (email === 'admin' && pass === 'pass') navigate('/dashboard')
-    if (email === 'user' && pass === 'pass') navigate('/meus-registros')
-    else {
-      console.error('dados invalidos')
-      setIsModalVisible(true)
-      setTimeout(() => { return setIsModalVisible(false) }, 3000)
-      setEmail('')
-      setPass('')
-    }
+    authLogin({
+      variables: {
+        identifier: email,
+        password: pass,
+      },
+      onError: (error) => {
+        console.error(error.message)
+        setIsModalVisible(true)
+        setTimeout(() => { return setIsModalVisible(false) }, 3000)
+        setEmail('')
+        setPass('')
+      },
+      onCompleted: (data) => {
+        if (data.login.user.role.type === 'admin') navigate('/dashboard')
+        if (data.login.user.role.type === 'user') navigate('/meus-registros')
+      },
+    })
+    // if (email === 'admin' && pass === 'pass') navigate('/dashboard')
+    // if (email === 'user' && pass === 'pass') navigate('/meus-registros')
+    // else {
+    //   console.error('dados invalidos')
+    //   setIsModalVisible(true)
+    //   setTimeout(() => { return setIsModalVisible(false) }, 3000)
+    //   setEmail('')
+    //   setPass('')
+    // }
   }
   return (
     <>

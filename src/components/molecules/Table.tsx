@@ -2,29 +2,21 @@ import { Box, HStack, Table as TableChakra, Tbody, Td, Text, Th, Thead, Tr } fro
 import { defaultTheme } from '../../styles/defaultTheme'
 import { pxToRem } from '../../utils/operations'
 
+type Registers = {
+  id: number
+  colaborador: string
+  data: string
+  hora: string
+}
 const data = [
-  {
-    id: 1,
-    colaborador: 'Joao Silva',
-    data: '11/10/19',
-    hora: '12:00h'
-  },
-  {
-    id: 2,
-    colaborador: 'Rodrigo Rocha',
-    data: '01/10/22',
-    hora: '06:00h'
-  },
-  {
-    id: 3,
-    colaborador: 'Miriam',
-    data: '13/10/18',
-    hora: '12:00h'
-  },
+  
 ]
-
-export function Table() {
-  const ths = ['colaborador', 'data', 'hora']
+interface TableProps {
+  ths: string[]
+  data: Registers[]
+}
+export function Table({ ths, data }: TableProps) {
+  ths = ['colaborador', 'data', 'hora']
 
   return (
     <TableChakra
@@ -51,16 +43,23 @@ export function Table() {
               <HStack align='stretch'>
                 <Box w='5px' bg={defaultTheme.colors.secundaryColor} borderRadius='30px' />
                 <Box>
-                  <Text>{value.colaborador}</Text>
-                  <Text>{new Intl.NumberFormat('pt-br', {
+                  <Text
+                    fontSize={pxToRem(18)}
+                    fontWeight={700}
+                    letterSpacing='0.02rem'
+                  >{value.colaborador}</Text>
+                  <Text
+                    letterSpacing='0.02rem'
+                    opacity='0.6'
+                  >{new Intl.NumberFormat('pt-br', {
                     minimumIntegerDigits: 3,
                     useGrouping: false
                   }).format(value.id)}</Text>
                 </Box>
               </HStack>
             </Td>
-            <Td>{value.data}</Td>
-            <Td borderRightRadius='10px'>{value.hora}</Td>
+            <Td opacity={0.7}>{value.data}</Td>
+            <Td borderRightRadius='10px' opacity={0.7}>{value.hora}</Td>
           </Tr>
         ))}
       </Tbody>

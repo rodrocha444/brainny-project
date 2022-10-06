@@ -18,15 +18,13 @@ export function Sidebar(props: SidebarProps) {
   const client = useApolloClient()
   return (
     <Flex
-      w='15%'
+      maxW={pxToRem(200)}
       boxShadow='0px 4px 10px rgba(0, 0, 0, 0.1)'
       direction='column'
       justifyContent='space-between'
-      sx={{
-        zIndex: 1
-      }}
+      
     >
-      <Box>
+      <Box >
         <Image src={LogoColor} alt='Logotipo do PontoGo' p={pxToRem(30)} />
         {
           props.options.map(option => <HStack
