@@ -1,8 +1,8 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+
 import { System } from './pages/System'
 import { LandingPage } from './pages/LandingPage'
 import { Login } from './pages/Login'
-import { ProtectedLayout } from './components/templates/ProtectedLayout'
 
 export function Router() {
   return (

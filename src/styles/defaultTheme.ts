@@ -1,4 +1,5 @@
 import { extendTheme } from "@chakra-ui/react";
+
 import { pxToRem } from "../utils/operations";
 
 const configTheme = {
