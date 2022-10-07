@@ -36,3 +36,10 @@ yarn build
 - jwt-decode
 
 > OBS: a versão do NodeJS utilizada foi a v16.17.1
+
+## Overview
+<div align='center'>
+  <img align='center' src='https://user-images.githubusercontent.com/58188119/194595225-6d3cb2ab-d6d4-4937-890b-ae736474480c.PNG' width='600'/>
+  <img align='center' src='https://user-images.githubusercontent.com/58188119/194595185-23c0371f-3ecb-4527-bfe1-ddf5ca10b26e.PNG' width='600'/>
+  <img align='center' src='https://user-images.githubusercontent.com/58188119/194595196-35f3746a-df55-4960-b99d-f94d7a663efa.PNG' width='600'/>
+</div>
