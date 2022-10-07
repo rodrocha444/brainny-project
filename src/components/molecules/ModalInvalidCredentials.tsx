@@ -1,5 +1,4 @@
-import { Center, Modal, ModalContent, ModalProps, Text } from "@chakra-ui/react";
-import React from "react";
+import { Center, Modal, ModalContent, Text } from "@chakra-ui/react";
 import { pxToRem } from "../../utils/operations";
 
 interface ModalInvalidCredentialsProps{

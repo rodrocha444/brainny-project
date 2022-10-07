@@ -16,10 +16,11 @@ export async function login(email: string, password: string) {
       password: password
     }
   })
+  const jwtTokenRecieved = result.data?.login.jwt || ''
+  const userType = result.data?.login.user.role?.type
 
-  localStorage.setItem('token', result.data?.login.jwt || '')
-
-  return result.data?.login.user.role?.type!
+  localStorage.setItem('token', jwtTokenRecieved)
+  return userType
 }
 
 export function logout() {
@@ -30,7 +31,7 @@ export function logout() {
 export function authenticate() {
   try {
     const result = jwtDecode(localStorage.getItem('token') || '') as { id: number }
-    return result.id ? true : false
+    return result.id ? true : false //Verificando se o token decodificado tem a propriedare id
   } catch (e) {
     console.error(e)
     return false
@@ -42,33 +43,35 @@ export async function getRegisteredTimes(id?: number) {
   const decodedToken = jwtDecode(localStorage.getItem('token')!) as { id: number }
 
   if (id) {
-    return await client.query({
+    const result = await client.query({
       query: GET_REGISTERED_TIMES,
       variables: {
         id: decodedToken.id.toString()
       }
-    }).then(result => result.data.registeredTimes)
+    })
+    const data = await result.data.registeredTimes
+    return data
   }
   else {
-    return await client.query({
+    const result = await client.query({
       query: GET_REGISTERED_TIMES_ALL,
-    }).then(result => result.data.registeredTimes)
+    })
+    const data = await result.data.registeredTimes
+    return data
   }
 }
 
 export async function registerTime() {
   const decodedToken = jwtDecode(localStorage.getItem('token')!) as { id: number }
+  const id = decodedToken.id.toString()
   const date = new Date().toISOString()
 
   try {
     return await client.mutate({
       mutation: REGISTER_TIME,
-      variables: {
-        id: decodedToken.id.toString(),
-        date,
-      }
+      variables: { id, date }
     })
   } catch (err) {
-    throw err;
+    console.error(err)
   }
 }

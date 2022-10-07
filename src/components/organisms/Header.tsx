@@ -21,12 +21,17 @@ export function Header() {
         <ButtonWithoutBG>Início</ButtonWithoutBG>
         <ButtonWithoutBG
           onClick={() => location.href = '#plans'}
-        >Planos</ButtonWithoutBG>
+        >
+          Planos
+        </ButtonWithoutBG>
+        
         <ButtonWithBG
           bgColor={["white", "secundaryColor"]}
           color={["principalColor", "white"]}
           onClick={() => navigate('/login')}
-        >Fazer Login</ButtonWithBG>
+        >
+          Fazer Login
+        </ButtonWithBG>
       </Flex>
     </Flex>
   )

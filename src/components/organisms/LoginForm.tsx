@@ -40,7 +40,7 @@ export function LoginForm() {
 
   return (
     <>
-      <FormControl maxW={pxToRem(300)} isRequired>
+      <FormControl maxW={pxToRem(300)}>
         <Flex direction='column' gap={pxToRem(30)}>
           <Image src={LogoColor} w='80%' />
 

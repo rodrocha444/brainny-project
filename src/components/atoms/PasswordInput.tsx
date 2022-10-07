@@ -10,12 +10,14 @@ export function PasswordInput(props: InputProps) {
 
   return (
     <InputGroup size='md'>
+
       <Input
         pr='4.5rem'
         type={show ? 'text' : 'password'}
         placeholder='Enter password'
         {...props}
       />
+      
       <InputRightElement width='4.5rem'>
         <Button h='1.75rem' size='sm' onClick={handleClick} variant='ghost'>
           {show
@@ -24,6 +26,7 @@ export function PasswordInput(props: InputProps) {
           }
         </Button>
       </InputRightElement>
+
     </InputGroup>
   )
 }

@@ -18,6 +18,14 @@ interface RegisterButtonProps extends ButtonProps {
 }
 export function RegisterButton(props: RegisterButtonProps) {
   const { isOpen, onOpen, onClose } = useDisclosure()
+
+  async function handleRegisterTime() {
+    const result = await registerTime()
+    const dadoCriado = result?.data.createRegisteredTime.registeredTime!
+
+    onClose()
+    props.updateData((prevState: any) => [...prevState, dadoCriado])
+  }
   return (
     <>
       <Button
@@ -30,7 +38,6 @@ export function RegisterButton(props: RegisterButtonProps) {
           bg: defaultTheme.colors.secundaryColor
         }}
         onClick={onOpen}
-        {...props}
       >
         Registrar Ponto
       </Button>
@@ -41,18 +48,17 @@ export function RegisterButton(props: RegisterButtonProps) {
         <ModalContent px={pxToRem(92)} py={pxToRem(60)} >
           <VStack>
             <ModalHeader>Registrar novo ponto</ModalHeader>
+
             <TimeIcon boxSize={pxToRem(88)} color={defaultTheme.colors.principalColor} />
-            <H1
-              fontFamily='Poppins'
-              color={defaultTheme.colors.principalColor}
-              fontWeight='700'
-              fontSize={pxToRem(30)}
-            >
+
+            <H1 color={defaultTheme.colors.principalColor}>
               {getTimeHHMM()}
             </H1>
+
             <Text>
               {getDateDDMMAA()}
             </Text>
+
             <Button
               color={defaultTheme.colors.white}
               bg={defaultTheme.colors.principalColor}
@@ -61,16 +67,13 @@ export function RegisterButton(props: RegisterButtonProps) {
               _hover={{
                 bg: defaultTheme.colors.secundaryColor
               }}
-              onClick={async () => {
-                onClose()
-                const result = await registerTime()
+              onClick={handleRegisterTime}
+            >
+              Bater Ponto
+            </Button>
 
-                const dadoCriado = result?.data.createRegisteredTime.registeredTime!
-
-                props.updateData((prevState: any) => [...prevState, dadoCriado])
-              }}
-            >Bater Ponto</Button>
-            <Button variant='outline'
+            <Button
+              variant='outline'
               color={defaultTheme.colors.principalColor}
               borderColor={defaultTheme.colors.principalColor}
               fontWeight='300'
@@ -79,11 +82,10 @@ export function RegisterButton(props: RegisterButtonProps) {
             >
               Cancelar
             </Button>
+
           </VStack>
           <ModalCloseButton />
-
         </ModalContent>
-
       </Modal>
     </>
   )

@@ -44,6 +44,7 @@ export function Table({ data }: TableProps) {
           }
         </Tr>
       </Thead>
+
       <Tbody>
         {data.map((value: any) => (
           <Tr bg='white' key={value.id}>
@@ -54,21 +55,21 @@ export function Table({ data }: TableProps) {
                   <Text
                     fontSize={pxToRem(18)}
                     fontWeight={700}
-                    letterSpacing='0.02rem'
-                  >{value.user.name}</Text>
-                  <Text
-                    letterSpacing='0.02rem'
-                    opacity='0.6'
-                  >{new Intl.NumberFormat('pt-br', {
-                    minimumIntegerDigits: 3,
-                    useGrouping: false
-                  }).format(Number(value.id))}</Text>
+                  >
+                    {value.user.name}
+                  </Text>
+
+                  <Text opacity='0.6'>
+                    {value.id}
+                  </Text>
                 </Box>
               </HStack>
             </Td>
+
             <Td opacity={0.7}>
               {getDateDDMMAA(value.created_at)}
             </Td>
+
             <Td borderRightRadius='10px' opacity={0.7}>
               {getTimeHHMM(value.created_at)}
             </Td>

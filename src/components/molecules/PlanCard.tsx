@@ -53,22 +53,32 @@ export function PlanCard(props: PlanCardProps) {
           fontWeight={800}
           fontSize={pxToRem(50)}
           lineHeight={1}
-        >R$ {props.data.price}</Text>
+        >
+          R$ {props.data.price}
+        </Text>
         <Text
           fontWeight={300}
           lineHeight={pxToRem(24)}
           color='#8A53FF'
-        >Uso de {props.data.quantColaboradores} colaboradores</Text>
+        >
+          Uso de {props.data.quantColaboradores} colaboradores
+        </Text>
       </Box>
 
-      <ListCheck listChecked={props.data.features} listNotChecked={props.data.notFeatures} />
+      <ListCheck
+        listChecked={props.data.features}
+        listNotChecked={props.data.notFeatures}
+      />
 
-      {props.selected && <ButtonWithBG
-        bgColor={["secundaryColor", "principalColor"]}
-        color={["white", "white"]}
-        w={pxToRem(160)}
-      >Assinar Agora</ButtonWithBG>
-      }
+      {props.selected && (
+        <ButtonWithBG
+          bgColor={["secundaryColor", "principalColor"]}
+          color={["white", "white"]}
+          w={pxToRem(160)}
+        >
+          Assinar Agora
+        </ButtonWithBG>
+      )}
 
     </Flex>
   )
