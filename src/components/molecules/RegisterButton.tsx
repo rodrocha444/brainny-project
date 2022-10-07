@@ -69,7 +69,6 @@ export function RegisterButton(props: RegisterButtonProps) {
 
                 const dadoCriado = result?.data.createRegisteredTime.registeredTime!
 
-                console.log(dadoCriado)
                 props.updateData((prevState: any) => [...prevState, dadoCriado])
               }}
             >Bater Ponto</Button>

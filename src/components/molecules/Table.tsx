@@ -13,7 +13,6 @@ interface TableProps {
   data: any
 }
 export function Table({ data }: TableProps) {
-  console.log(data)
   const ths = ['colaborador', 'data', 'hora']
   return (
     <TableChakra

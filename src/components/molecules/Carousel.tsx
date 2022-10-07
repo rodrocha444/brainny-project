@@ -59,11 +59,9 @@ export function Carousel(props: FlexProps) {
   function updateSelectedCard(action: 'INCREMENT' | 'DECREMENT') {
     if (action === 'INCREMENT' && selectedCard < cards.length) {
       setSelectedCard(prevState => prevState += 1)
-      console.log('ola')
     }
     if (action === 'DECREMENT' && selectedCard > 1) {
       setSelectedCard(prevState => prevState -= 1)
-      console.log('ola')
     }
   }
   return (

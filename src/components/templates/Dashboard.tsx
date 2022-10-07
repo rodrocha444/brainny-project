@@ -56,7 +56,7 @@ export function Dashboard(props: DashboardProps) {
           data={data}
 
         />
-        <Pagination />
+        {/* <Pagination /> */}
       </Box>
     </Flex >
   )

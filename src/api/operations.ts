@@ -25,11 +25,10 @@ export function logout() {
 
 export function authenticate() {
   try {
-    jwtDecode(localStorage.getItem('token')!)
-    return true
-  } catch (err) {
-    console.log(err)
-
+    const result = jwtDecode(localStorage.getItem('token') || '') as { id: number }
+    return result.id ? true : false
+  } catch (e) {
+    console.error(e)
     return false
   }
 }
@@ -66,6 +65,6 @@ export async function registerTime() {
       }
     })
   } catch (err) {
-    console.log(err);
+    throw err;
   }
 }

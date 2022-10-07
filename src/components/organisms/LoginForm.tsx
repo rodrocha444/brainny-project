@@ -25,7 +25,7 @@ export function LoginForm() {
       navigate(userType === 'admin' ? '/dashboard' : '/meus-registros')
     }
     catch (err) {
-      console.log(err)
+      console.error('Dados inválidos')
       setIsModalVisible(true)
       setTimeout(() => setIsModalVisible(false), 3000)
     }
