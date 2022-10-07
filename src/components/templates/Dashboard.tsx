@@ -27,6 +27,7 @@ interface DashboardProps {
 }
 export function Dashboard(props: DashboardProps) {
   const [data, setData] = useState([])
+
   useEffect(() => {
     updateData()
   }, [])
@@ -35,22 +36,25 @@ export function Dashboard(props: DashboardProps) {
     if (props.userType === 'admin') {
       const data = await getRegisteredTimes()
       setData(data)
-    }else{
+    } else {
       const data = await getRegisteredTimes(2)
       setData(data)
     }
   }
   return (
-    <Flex h='100vh'>
+    <Flex minH='100vh'>
       <Sidebar options={
         props.userType === 'colaborador' ? optionsColaborador : optionsAdmin
-      } />
+      }
+        
+      />
       <Box flex='1' bg='#F2F2F2' p={pxToRem(30)}>
         {props.userType === 'colaborador' &&
-          <RegisterButton />
+          <RegisterButton updateData={setData}/>
         }
         <Table
           data={data}
+
         />
         <Pagination />
       </Box>

@@ -11,8 +11,14 @@ import {
 } from '@chakra-ui/react'
 import { TimeIcon } from "@chakra-ui/icons";
 import { H1 } from "../atoms/Headings";
+import { registerTime } from "../../api/operations";
+import { useNavigate } from "react-router-dom";
 
-export function RegisterButton(props: ButtonProps) {
+interface RegisterButtonProps extends ButtonProps {
+  updateData: Function
+}
+export function RegisterButton(props: RegisterButtonProps) {
+  const navigate = useNavigate()
   const { isOpen, onOpen, onClose } = useDisclosure()
   return (
     <>
@@ -43,8 +49,12 @@ export function RegisterButton(props: ButtonProps) {
               color={defaultTheme.colors.principalColor}
               fontWeight='700'
               fontSize={pxToRem(30)}
-            >10:30</H1>
-            <Text>20/20/22</Text>
+            >
+              {new Intl.DateTimeFormat('pt-br', { timeStyle: 'short' }).format(new Date())}
+            </H1>
+            <Text>
+              {new Intl.DateTimeFormat('pt-br').format(new Date())}
+            </Text>
             <Button
               color={defaultTheme.colors.white}
               bg={defaultTheme.colors.principalColor}
@@ -52,6 +62,15 @@ export function RegisterButton(props: ButtonProps) {
               w={pxToRem(200)}
               _hover={{
                 bg: defaultTheme.colors.secundaryColor
+              }}
+              onClick={async () => {
+                onClose()
+                const result = await registerTime()
+
+                const dadoCriado = result?.data.createRegisteredTime.registeredTime!
+
+                console.log(dadoCriado)
+                props.updateData((prevState: any) => [...prevState, dadoCriado])
               }}
             >Bater Ponto</Button>
             <Button variant='outline'

@@ -1,7 +1,7 @@
 import jwtDecode from "jwt-decode";
 import { UsersPermissionsLoginInput, UsersPermissionsLoginPayload, RegisteredTime } from "../gql/graphql";
 import { client } from "./config";
-import { LOGIN_MUTATION } from "./mutations";
+import { LOGIN_MUTATION, REGISTER_TIME } from "./mutations";
 import { GET_REGISTERED_TIMES, GET_REGISTERED_TIMES_ALL } from "./querys";
 
 export async function login(email: string, password: string) {
@@ -36,17 +36,36 @@ export function authenticate() {
 
 
 export async function getRegisteredTimes(id?: number) {
+  const decodedToken = jwtDecode(localStorage.getItem('token')!) as { id: number }
+
   if (id) {
     return await client.query({
       query: GET_REGISTERED_TIMES,
       variables: {
-        id: id.toString()
+        id: decodedToken.id.toString()
       }
-    }).then(result=> result.data.registeredTimes)
+    }).then(result => result.data.registeredTimes)
   }
   else {
     return await client.query({
       query: GET_REGISTERED_TIMES_ALL,
-    }).then(result=> result.data.registeredTimes)
+    }).then(result => result.data.registeredTimes)
+  }
+}
+
+export async function registerTime() {
+  const decodedToken = jwtDecode(localStorage.getItem('token')!) as { id: number }
+  const date = new Date().toISOString()
+
+  try {
+    return await client.mutate({
+      mutation: REGISTER_TIME,
+      variables: {
+        id: decodedToken.id.toString(),
+        date,
+      }
+    })
+  } catch (err) {
+    console.log(err);
   }
 }

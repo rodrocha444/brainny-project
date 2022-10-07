@@ -10,6 +10,7 @@ export function Pagination() {
     let result = []
     for (let i = 0; i < pages; i++) {
       result.push(<Center
+        key={i}
         boxSize={pxToRem(30)}
         borderRadius='6px'
         border='0.5px solid #20292E'

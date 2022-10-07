@@ -13,6 +13,7 @@ interface TableProps {
   data: any
 }
 export function Table({ data }: TableProps) {
+  console.log(data)
   const ths = ['colaborador', 'data', 'hora']
   return (
     <TableChakra
@@ -25,6 +26,7 @@ export function Table({ data }: TableProps) {
         <Tr>
           {
             ths.map(th => <Th
+              key={th}
               fontFamily='unset'
               textTransform='capitalize'
               fontSize={pxToRem(16)}
@@ -34,7 +36,7 @@ export function Table({ data }: TableProps) {
       </Thead>
       <Tbody>
         {data.map((value: any) => (
-          <Tr bg='white'>
+          <Tr bg='white' key={value.id}>
             <Td borderLeftRadius='10px'>
               <HStack align='stretch'>
                 <Box w='5px' bg={defaultTheme.colors.secundaryColor} borderRadius='30px' />

@@ -31,6 +31,7 @@ export function Sidebar(props: SidebarProps) {
         <Image src={LogoColor} alt='Logotipo do PontoGo' p={pxToRem(30)} />
         {
           props.options.map(option => <HStack
+            key={option.description}
             borderY='1px solid rgba(0, 0, 0, 0.08)'
             borderLeft='4px solid #330693'
             px={pxToRem(20)}
@@ -52,7 +53,7 @@ export function Sidebar(props: SidebarProps) {
       <Button leftIcon={<WarningIcon />} textAlign='left'
         onClick={() => {
           logout()
-          navigate('/')
+          navigate('/login')
         }}
       >
         Sair
