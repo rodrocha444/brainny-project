@@ -2,7 +2,7 @@ import {  Container, Flex } from "@chakra-ui/react";
 
 import { pxToRem } from "../utils/operations";
 import { WelcomeBanner } from "../components/organisms/WelcomeBanner";
-import { LoginForm } from "../components/organisms/LoginForm";
+import { LoginForm } from "../components/molecules/LoginForm";
 
 export function Login() {
   return (

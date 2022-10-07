@@ -5,7 +5,7 @@ import { useState } from "react";
 import { cards } from "../../data/cards";
 import { defaultTheme } from "../../styles/defaultTheme";
 import { pxToRem } from "../../utils/operations";
-import { PlanCard } from "./PlanCard";
+import { PlanCard } from "../molecules/PlanCard";
 
 export function Carousel(props: FlexProps) {
   const [selectedCard, setSelectedCard] = useState(2)

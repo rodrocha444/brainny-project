@@ -17,7 +17,7 @@ import LogoColor from '../../assets/logo-color.svg';
 import { H1 } from "../atoms/Headings";
 import { PasswordInput } from "../atoms/PasswordInput";
 import { login } from "../../api/operations";
-import { ModalInvalidCredentials } from "../molecules/ModalInvalidCredentials";
+import { ModalInvalidCredentials } from "./ModalInvalidCredentials";
 
 export function LoginForm() {
   const [email, setEmail] = useState('')
