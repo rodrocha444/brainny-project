@@ -43,7 +43,7 @@ export function RegisterButton(props: RegisterButtonProps) {
       </Button>
 
       <Modal isOpen={isOpen} onClose={onClose} >
-        <ModalOverlay />
+        <ModalOverlay backdropFilter='blur(4px)'/>
 
         <ModalContent px={pxToRem(92)} py={pxToRem(60)} >
           <VStack>

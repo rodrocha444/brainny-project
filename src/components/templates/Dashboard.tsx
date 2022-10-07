@@ -5,7 +5,7 @@ import { CalendarIcon, EditIcon } from "@chakra-ui/icons";
 import { pxToRem } from "../../utils/operations";
 import { Option, Sidebar } from "../organisms/Sidebar";
 import { Table } from "../molecules/Table";
-import { RegisterButton } from "../molecules/RegisterButton";
+import { RegisterButton } from "../organisms/RegisterButton";
 import { getRegisteredTimes } from "../../api/operations";
 // import { Pagination } from "../molecules/Pagination";
 
