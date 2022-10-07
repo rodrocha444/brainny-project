@@ -6,7 +6,7 @@ import { defaultTheme } from "../../styles/defaultTheme";
 import { ListCheck } from "../atoms/ListCheck";
 
 const notSelectedStyle = {
-  opacity: 0.15,
+  opacity: [0, 0, 0.15],
   filter: 'blur(1px)',
   userSelect: 'none'
 }

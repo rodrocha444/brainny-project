@@ -20,10 +20,12 @@ export function Carousel(props: FlexProps) {
         break
     }
   }
-  
+
   return (
-    <Flex {...props} align='center'>
+    <Flex align='center' justifyContent='center' {...props} position='relative' w={'100vw'}>
       <IconButton
+        position='absolute'
+        left='0'
         aria-label="Plano Posterior"
         icon={<ArrowBackIcon
           boxSize={pxToRem(25)}
@@ -34,20 +36,23 @@ export function Carousel(props: FlexProps) {
           color: defaultTheme.colors.principalColor,
           backgroundColor: defaultTheme.colors.white
         }}
-        mx={10}
         onClick={() => updateSelectedCard('DECREMENT')}
+        zIndex={1}
+        mx={10}
       />
 
       {
         cards.map(card => <PlanCard
           key={card.id}
           data={card}
-          mx={-2}
+          mx={[pxToRem(-152), pxToRem(-152), pxToRem(-30)]}
           selected={card.id === selectedCard}
         />)
       }
 
       <IconButton
+        position='absolute'
+        right='0'
         aria-label="Plano Posterior"
         icon={<ArrowForwardIcon
           boxSize={pxToRem(25)}
@@ -58,8 +63,8 @@ export function Carousel(props: FlexProps) {
           color: defaultTheme.colors.principalColor,
           backgroundColor: defaultTheme.colors.white
         }}
-        mx={10}
         onClick={() => updateSelectedCard('INCREMENT')}
+        mx={10}
       />
     </Flex>
   )

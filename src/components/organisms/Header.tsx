@@ -13,6 +13,9 @@ export function Header() {
     <Flex
       as='header'
       justify='space-between'
+      align='center'
+      direction={['column', 'column', 'row']}
+      gap={[pxToRem(20), pxToRem(20), 0]}
       py={pxToRem(45)}
     >
       <Image src={LogoWhite} alt="Logotipo PontoGO" height={pxToRem(38)} />
@@ -24,7 +27,7 @@ export function Header() {
         >
           Planos
         </ButtonWithoutBG>
-        
+
         <ButtonWithBG
           bgColor={["white", "secundaryColor"]}
           color={["principalColor", "white"]}

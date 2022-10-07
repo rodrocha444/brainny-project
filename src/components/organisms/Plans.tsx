@@ -7,7 +7,12 @@ import { Carousel } from "./Carousel";
 
 export function Plans(props: FlexProps) {
   return (
-    <Flex direction='column' textAlign='center' align='center' gap={pxToRem(20)} {...props}>
+    <Flex 
+    direction='column' 
+    textAlign='center' 
+    align='center' 
+    {...props}
+    >
       <H1>Encontre o plano perfeito</H1>
       <TextDefault
         fontWeight={300}
@@ -16,7 +21,7 @@ export function Plans(props: FlexProps) {
         Escolha o plano que melhor se encaixa na sua empresa e  faça sua assinatura, dentro de 72h iremos liberar seus acessos.
       </TextDefault>
 
-      <Carousel mt={pxToRem(30)} mb={pxToRem(90)} />
+      <Carousel mt={pxToRem(40)} mb={pxToRem(70)} />
     </Flex>
   )
 }

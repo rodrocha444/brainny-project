@@ -8,7 +8,7 @@ export function Footer() {
     <Flex direction='column' align='center' gap={pxToRem(20)} my={pxToRem(20)}>
       <Box h='1px' w='100vw' bg='#8A53FF' />
 
-      <Flex gap={pxToRem(40)}>
+      <Flex gap={pxToRem(40)} align="center">
         <Flex direction='column' gap={pxToRem(5)} color='white'>
           <Text fontWeight={700}>@pontogo</Text>
           <Text fontWeight={300}>Se conecta com a gente</Text>
@@ -21,7 +21,7 @@ export function Footer() {
             transition='all 0.2s'
             _hover={{ filter: 'opacity(0.8)' }}
           >
-            <Image src={logo.src} alt='' boxSize={pxToRem(60)} />
+            <Image src={logo.src} alt='' w={pxToRem(60)} />
           </Link>
         ))}
       </Flex>

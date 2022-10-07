@@ -8,7 +8,9 @@ export function Sponsors() {
     <Flex
       align='center'
       justify='space-around'
-      my={pxToRem(90)}
+      direction={['column', 'column', 'row']}
+      gap={[pxToRem(20), pxToRem(20), 0]}
+      my={[pxToRem(40), pxToRem(40), pxToRem(90)]}
     >
 
       {sponsorsLogos.map((logoSrc => (
