@@ -4,8 +4,6 @@
 Projeto de criação de um ambiente WEB administrativo,para o gerenciamento do
 sistema. Mais especificamente, para o controle de pontos de uma empresa
 
----
-
 ## Instruções para execução do projeto
 
 
@@ -34,5 +32,6 @@ yarn build
 - Vite
 - Chakra UI
 - jwt-decode
+- JWT Athentication
 
 > OBS: a versão do NodeJS utilizada foi a v16.17.1
