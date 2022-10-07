@@ -1,5 +1,5 @@
 import { WarningIcon } from "@chakra-ui/icons";
-import { Box, Button, Flex, HStack, Image, Text } from "@chakra-ui/react";
+import { Box, Button, calc, Flex, HStack, Image, Text } from "@chakra-ui/react";
 import { ReactNode } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -23,8 +23,7 @@ export function Sidebar(props: SidebarProps) {
       maxW={pxToRem(200)}
       boxShadow='0px 4px 10px rgba(0, 0, 0, 0.1)'
       direction='column'
-      justifyContent='space-between'
-
+      position='relative'
     >
       <Box >
         <Image src={LogoColor} alt='Logotipo do PontoGo' p={pxToRem(30)} />
@@ -49,11 +48,16 @@ export function Sidebar(props: SidebarProps) {
           </HStack>)
         }
       </Box>
-      <Button leftIcon={<WarningIcon />} textAlign='left'
+      <Button
+        leftIcon={<WarningIcon />}
+        colorScheme='blackAlpha'
         onClick={() => {
           logout()
           navigate('/login')
         }}
+        position='fixed'
+        top={`calc(100vh - 3rem)`}
+        w={pxToRem(200)}
       >
         Sair
       </Button>
