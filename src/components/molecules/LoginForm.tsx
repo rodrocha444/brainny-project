@@ -54,6 +54,7 @@ export function LoginForm() {
               placeholder="exemplo@email.com"
               onChange={(e) => setEmail(e.target.value)}
               value={email}
+              onKeyDown={(e) => e.key === 'Enter' && handleSubmit}
             />
           </Box>
 
@@ -64,6 +65,7 @@ export function LoginForm() {
               placeholder="*************"
               onChange={(e) => setPass(e.target.value)}
               value={pass}
+              onKeyDown={(e) => e.key === 'Enter' && handleSubmit}
             />
             <Button
               variant='link'
