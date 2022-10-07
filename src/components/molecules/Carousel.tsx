@@ -1,6 +1,7 @@
 import { ArrowBackIcon, ArrowForwardIcon } from "@chakra-ui/icons";
 import { Flex, FlexProps, IconButton } from "@chakra-ui/react";
 import { useState } from "react";
+
 import { cards } from "../../data/cards";
 import { defaultTheme } from "../../styles/defaultTheme";
 import { pxToRem } from "../../utils/operations";

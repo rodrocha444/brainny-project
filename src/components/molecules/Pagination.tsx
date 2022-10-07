@@ -1,6 +1,7 @@
 import {  ChevronLeftIcon, ChevronRightIcon } from "@chakra-ui/icons";
 import { Center, Flex } from "@chakra-ui/react";
 import { useState } from "react";
+
 import { pxToRem } from "../../utils/operations";
 
 export function Pagination() {

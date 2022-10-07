@@ -1,7 +1,4 @@
 import { Button, ButtonProps, Text, useDisclosure, VStack } from "@chakra-ui/react";
-import { defaultTheme } from "../../styles/defaultTheme";
-import { pxToRem } from "../../utils/operations";
-
 import {
   Modal,
   ModalOverlay,
@@ -9,8 +6,10 @@ import {
   ModalHeader,
   ModalCloseButton,
 } from '@chakra-ui/react'
-
 import { TimeIcon } from "@chakra-ui/icons";
+
+import { defaultTheme } from "../../styles/defaultTheme";
+import { getDateDDMMAA, getTimeHHMM, pxToRem } from "../../utils/operations";
 import { H1 } from "../atoms/Headings";
 import { registerTime } from "../../api/operations";
 
@@ -49,10 +48,10 @@ export function RegisterButton(props: RegisterButtonProps) {
               fontWeight='700'
               fontSize={pxToRem(30)}
             >
-              {new Intl.DateTimeFormat('pt-br', { timeStyle: 'short' }).format(new Date())}
+              {getTimeHHMM()}
             </H1>
             <Text>
-              {new Intl.DateTimeFormat('pt-br').format(new Date())}
+              {getDateDDMMAA()}
             </Text>
             <Button
               color={defaultTheme.colors.white}

@@ -1,14 +1,13 @@
 import { Box, Flex } from "@chakra-ui/react";
-
-import { constructDataForTable, pxToRem } from "../../utils/operations";
-import { Option, Sidebar } from "../organisms/Sidebar";
-import { Table, TableData } from "../molecules/Table";
-import { RegisterButton } from "../molecules/RegisterButton";
-import { CalendarIcon, EditIcon } from "@chakra-ui/icons";
-import { Pagination } from "../molecules/Pagination";
-import { authenticate, getRegisteredTimes } from "../../api/operations";
 import { useEffect, useState } from "react";
-import { RegisteredTime } from "../../gql/graphql";
+import { CalendarIcon, EditIcon } from "@chakra-ui/icons";
+
+import { pxToRem } from "../../utils/operations";
+import { Option, Sidebar } from "../organisms/Sidebar";
+import { Table } from "../molecules/Table";
+import { RegisterButton } from "../molecules/RegisterButton";
+import { getRegisteredTimes } from "../../api/operations";
+// import { Pagination } from "../molecules/Pagination";
 
 const optionsColaborador: Option[] = [
   {
@@ -54,7 +53,6 @@ export function Dashboard(props: DashboardProps) {
         }
         <Table
           data={data}
-
         />
         {/* <Pagination /> */}
       </Box>

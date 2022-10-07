@@ -1,16 +1,23 @@
 import {
-  Box, Button, Center, Flex, FormControl,
-  FormLabel, Image, Input, Modal, ModalContent, Text
+  Box,
+  Button,
+  Center,
+  Flex,
+  FormControl,
+  FormLabel,
+  Image,
+  Input,
 } from "@chakra-ui/react";
+import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+
 import { defaultTheme } from "../../styles/defaultTheme";
 import { pxToRem } from "../../utils/operations";
-
 import LogoColor from '../../assets/logo-color.svg';
 import { H1 } from "../atoms/Headings";
 import { PasswordInput } from "../atoms/PasswordInput";
-import { useEffect, useState } from "react";
-import { authenticate, login } from "../../api/operations";
-import { useNavigate } from "react-router-dom";
+import { login } from "../../api/operations";
+import { ModalInvalidCredentials } from "../molecules/ModalInvalidCredentials";
 
 export function LoginForm() {
   const [email, setEmail] = useState('')
@@ -84,21 +91,11 @@ export function LoginForm() {
         </Flex>
       </FormControl>
 
-      <Modal
+      <ModalInvalidCredentials
         isOpen={isModalVisible}
         onClose={() => setIsModalVisible(false)}
-      >
-        <ModalContent p={pxToRem(10)}
-          bg='red.400'
-          color='white'
-          mt={pxToRem(10)}
-          boxShadow='2px 2px 10px rgba(0,0,0,0.5)'
-        >
-          <Center>
-            <Text>Dados Inválidos</Text>
-          </Center>
-        </ModalContent>
-      </Modal>
+        message='Dados inválidos'
+      />
     </>
   )
 }

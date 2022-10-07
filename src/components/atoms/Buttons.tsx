@@ -1,6 +1,6 @@
 import { Button, ButtonProps } from "@chakra-ui/react";
-import { ColorsThemeType, defaultTheme } from "../../styles/defaultTheme";
 
+import { ColorsThemeType, defaultTheme } from "../../styles/defaultTheme";
 import { pxToRem } from "../../utils/operations";
 
 export function ButtonWithoutBG(props: ButtonProps) {

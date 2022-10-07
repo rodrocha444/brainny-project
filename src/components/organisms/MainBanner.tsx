@@ -1,4 +1,5 @@
 import { Flex, Image } from "@chakra-ui/react";
+
 import { pxToRem } from "../../utils/operations";
 import MainImage from '../../assets/main-image.png'
 import { Description } from "../molecules/Description";

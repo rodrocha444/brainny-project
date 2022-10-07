@@ -1,7 +1,7 @@
 import { Text, TextProps } from "@chakra-ui/react";
+
 import { defaultTheme } from "../../styles/defaultTheme";
 import { pxToRem } from "../../utils/operations";
-
 
 export function TextDefault(props: TextProps) {
   return (

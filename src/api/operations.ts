@@ -1,5 +1,9 @@
 import jwtDecode from "jwt-decode";
-import { UsersPermissionsLoginInput, UsersPermissionsLoginPayload } from "../gql/graphql";
+
+import {
+  UsersPermissionsLoginInput,
+  UsersPermissionsLoginPayload
+} from "../gql/graphql";
 import { client } from "./config";
 import { LOGIN_MUTATION, REGISTER_TIME } from "./mutations";
 import { GET_REGISTERED_TIMES, GET_REGISTERED_TIMES_ALL } from "./querys";

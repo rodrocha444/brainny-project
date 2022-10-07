@@ -1,6 +1,7 @@
 import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons"
 import { Button, Input, InputGroup, InputProps, InputRightElement } from "@chakra-ui/react"
 import { useState } from "react"
+
 import { defaultTheme } from "../../styles/defaultTheme"
 
 export function PasswordInput(props: InputProps) {

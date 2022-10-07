@@ -1,6 +1,17 @@
-import { Box, HStack, Table as TableChakra, Tbody, Td, Text, Th, Thead, Tr } from '@chakra-ui/react'
+import {
+  Box,
+  HStack,
+  Table as TableChakra,
+  Tbody,
+  Td,
+  Text,
+  Th,
+  Thead,
+  Tr
+} from '@chakra-ui/react'
+
 import { defaultTheme } from '../../styles/defaultTheme'
-import { pxToRem } from '../../utils/operations'
+import { getDateDDMMAA, getTimeHHMM, pxToRem } from '../../utils/operations'
 
 export type TableData = {
   id: string
@@ -55,8 +66,12 @@ export function Table({ data }: TableProps) {
                 </Box>
               </HStack>
             </Td>
-            <Td opacity={0.7}>{new Intl.DateTimeFormat('pt-br').format(new Date(value.created_at))}</Td>
-            <Td borderRightRadius='10px' opacity={0.7}>{new Intl.DateTimeFormat('pt-br', { timeStyle: 'short' }).format(new Date(value.created_at))}</Td>
+            <Td opacity={0.7}>
+              {getDateDDMMAA(value.created_at)}
+            </Td>
+            <Td borderRightRadius='10px' opacity={0.7}>
+              {getTimeHHMM(value.created_at)}
+            </Td>
           </Tr>
         ))}
       </Tbody>

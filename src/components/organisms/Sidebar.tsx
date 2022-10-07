@@ -1,11 +1,11 @@
-import { EditIcon, WarningIcon } from "@chakra-ui/icons";
+import { WarningIcon } from "@chakra-ui/icons";
 import { Box, Button, Flex, HStack, Image, Text } from "@chakra-ui/react";
+import { ReactNode } from "react";
+import { useNavigate } from "react-router-dom";
+
 import { defaultTheme } from "../../styles/defaultTheme";
 import { pxToRem } from "../../utils/operations";
 import LogoColor from '../../assets/logo-color.svg';
-import { ReactNode } from "react";
-import { gql, useApolloClient, useQuery } from "@apollo/client";
-import { Navigate, useNavigate } from "react-router-dom";
 import { logout } from "../../api/operations";
 
 export type Option = {
@@ -17,7 +17,6 @@ interface SidebarProps {
   options: Option[]
 }
 export function Sidebar(props: SidebarProps) {
-  const client = useApolloClient()
   const navigate = useNavigate()
   return (
     <Flex

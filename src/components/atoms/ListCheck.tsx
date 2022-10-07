@@ -1,5 +1,6 @@
 import { CheckIcon, CloseIcon } from "@chakra-ui/icons";
 import { Flex, Text } from "@chakra-ui/react";
+
 import { pxToRem } from "../../utils/operations";
 
 interface ListCheckProps {

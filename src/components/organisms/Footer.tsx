@@ -1,20 +1,7 @@
 import { Box, Flex, Image, Link, Text } from "@chakra-ui/react";
-import { pxToRem } from "../../utils/operations";
 
-const socialLogos = [
-  {
-    src: 'src/assets/instagram-logo.png',
-    href: 'http://www.instagram.com'
-  },
-  {
-    src: 'src/assets/facebook-logo.png',
-    href: 'http://www.facebook.com'
-  },
-  {
-    src: 'src/assets/linkedin-logo.png',
-    href: 'http://www.linkedin.com'
-  },
-]
+import { socialMedias } from "../../data/socialMedias";
+import { pxToRem } from "../../utils/operations";
 
 export function Footer() {
   return (
@@ -26,7 +13,7 @@ export function Footer() {
           <Text fontWeight={700}>@pontogo</Text>
           <Text fontWeight={300}>Se conecta com a gente</Text>
         </Flex>
-        {socialLogos.map((logo, index) => (
+        {socialMedias.map((logo, index) => (
           <Link key={index} href={logo.href} target="_blank" transition='all 0.2s' _hover={{ filter: 'opacity(0.8)' }}>
             <Image src={logo.src} alt='' boxSize={pxToRem(60)} />
           </Link>

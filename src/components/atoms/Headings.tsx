@@ -1,4 +1,5 @@
 import { Heading, HeadingProps } from "@chakra-ui/react";
+
 import { pxToRem } from "../../utils/operations";
 
 export function H1(props: HeadingProps) {

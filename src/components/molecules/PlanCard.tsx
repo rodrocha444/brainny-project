@@ -1,4 +1,5 @@
 import { Box, Flex, FlexProps, Text } from "@chakra-ui/react";
+
 import { ButtonWithBG } from "../atoms/Buttons";
 import { pxToRem } from "../../utils/operations";
 import { defaultTheme } from "../../styles/defaultTheme";

@@ -4,7 +4,6 @@ import { defaultTheme } from "../../styles/defaultTheme";
 import { H1 } from "../atoms/Headings";
 import { TextDefault } from "../atoms/Texts";
 import { pxToRem } from "../../utils/operations";
-
 import MainLoginImage from '../../assets/main-login-image.png';
 
 export function WelcomeBanner() {
