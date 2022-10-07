@@ -10,7 +10,11 @@ export function MainBanner() {
       py={pxToRem(30)}
     >
       <Description />
-      <Image w={pxToRem(450)} src={MainImage} alt={'Imagem ilustrativa sobre o controle de pontos'} />
+      <Image
+        w={pxToRem(450)}
+        src={MainImage}
+        alt={'Imagem ilustrativa sobre o controle de pontos'}
+      />
     </Flex>
   )
 }

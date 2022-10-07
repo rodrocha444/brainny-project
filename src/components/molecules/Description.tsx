@@ -37,7 +37,6 @@ export function Description() {
           onClick={() => location.href = '#plans'}
         >Ver planos</ButtonWithoutBG>
       </Flex>
-
     </Flex>
   )
 }

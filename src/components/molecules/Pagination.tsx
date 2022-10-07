@@ -1,5 +1,5 @@
-import { ArrowLeftIcon, ChevronLeftIcon, ChevronRightIcon } from "@chakra-ui/icons";
-import { Box, Center, Flex, HStack } from "@chakra-ui/react";
+import {  ChevronLeftIcon, ChevronRightIcon } from "@chakra-ui/icons";
+import { Center, Flex } from "@chakra-ui/react";
 import { useState } from "react";
 import { pxToRem } from "../../utils/operations";
 

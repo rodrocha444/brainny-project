@@ -9,16 +9,15 @@ import {
   ModalHeader,
   ModalCloseButton,
 } from '@chakra-ui/react'
+
 import { TimeIcon } from "@chakra-ui/icons";
 import { H1 } from "../atoms/Headings";
 import { registerTime } from "../../api/operations";
-import { useNavigate } from "react-router-dom";
 
 interface RegisterButtonProps extends ButtonProps {
   updateData: Function
 }
 export function RegisterButton(props: RegisterButtonProps) {
-  const navigate = useNavigate()
   const { isOpen, onOpen, onClose } = useDisclosure()
   return (
     <>

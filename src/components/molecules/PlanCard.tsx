@@ -13,6 +13,7 @@ const notSelectedStyle = {
 const selectedStyle = {
   transform: 'scale(1.1)'
 }
+
 export interface CardType {
   id: number
   title: string
@@ -21,10 +22,12 @@ export interface CardType {
   features: string[]
   notFeatures: string[]
 }
+
 interface PlanCardProps extends FlexProps {
   selected: boolean
   data: CardType
 }
+
 export function PlanCard(props: PlanCardProps) {
   return (
     <Flex
